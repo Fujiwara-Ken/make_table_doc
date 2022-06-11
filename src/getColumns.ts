@@ -14,7 +14,7 @@ async function connection() {
   return connection;
 }
 
-let query = `SELECT TABLE_CATALOG, TABLE_SCHEMA, TABLE_NAME, COLUMN_NAME , COLUMN_DEFAULT, IS_NULLABLE, DATA_TYPE, GENERATION_EXPRESSION FROM information_schema.columns WHERE table_schema = '${env.database}' `;
+let query = ``;
 
 connection()
   .then((connection) => {
