@@ -1,0 +1,37 @@
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>{{ $g.Title }}</title>
+    <style>
+      {{ $g.HTMLCSS }}
+      @page { size: A4 }
+    </style>
+  </head>
+
+  <body class="A4">
+    .....
+    <!-- テーブル一覧 -->
+    <section class="sheet table-list-page">
+      <div class="row" id="row-1">
+        <h1>テーブル一覧</h1>
+      </div>
+      <div class="row" id="row-2">
+        <table>
+          <tr>
+            <th>No.</th>
+            <th>テーブル名</th>
+            <th>備考</th>
+          </tr>
+          {{ range $i, $t := $g.Tables -}}
+          <tr>
+            <td>{{ inc $i }}</td>
+            <td>{{ $t.Name }}</td>
+            <td>{{ $t.Comment }}</td>
+          </tr>
+          {{ end -}}
+        </table>
+      </div>
+    </section>
+  </body>
+</html>

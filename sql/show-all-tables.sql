@@ -1,9 +1,9 @@
 -- 全テーブルを抽出
-show tables from sawallet_api_copy;
+show tables from table_name;
 
 -- information_schemaから全テーブルを取得
 select * from information_schema.tables
-where table_schema = 'sawallet_api_copy'
+where table_schema = 'table_name'
 
 -- 指定したDBのテーブル情報全てを取得
 SELECT 
@@ -31,5 +31,5 @@ SELECT
 FROM 
 	information_schema.columns 
 WHERE 
-	table_schema='sawallet_api_copy'
+	table_schema='table_name'
 
