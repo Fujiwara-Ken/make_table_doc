@@ -1,16 +1,13 @@
 import ejs from 'ejs';
 import fs from 'fs';
 
-//とりあえず出力
-const data: ejs.Data = { title: 'ページタイトル', testText: 'テスト' };
-
 const render = async () => {
-  await ejs.renderFile('./template.ejs', data, function (err, str) {
-    // 出力ファイル名
-    const file = './dist/test.html';
+  const data = { title: 'ページタイトル', content: 'テスト', foot: 'フッター' };
+  await ejs.renderFile('../template/table_def.ejs', data, function (err, html) {
+    const filePath = '../dist/table-list.html';
+    console.log(html);
 
-    // テキストファイルに書き込む
-    fs.writeFile(file, str, 'utf8', (err: any) => {
+    fs.writeFile(filePath, html, 'utf8', (err: any) => {
       if (err) {
         console.log(err);
       } else {
