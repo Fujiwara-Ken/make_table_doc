@@ -1,22 +1,13 @@
-import * as mysql from 'promise-mysql';
+import { getConnection } from './func/connection';
 
 require('dotenv').config();
 const env = process.env;
 
-async function connection() {
-  const connection = await mysql.createConnection({
-    host: env.host,
-    database: env.database,
-    user: env.user,
-    password: env.password,
-  });
-
-  return connection;
-}
+const connection = getConnection();
 
 let query = `SELECT table_name FROM information_schema.tables WHERE table_schema = '${env.database}' AND table_type = 'BASE TABLE'`;
 
-connection()
+connection
   .then((connection) => {
     // console.log(connection);
     const result = connection.query(query);
