@@ -1,4 +1,4 @@
-import * as mysql from 'promise-mysql';
+import * as mysql from 'mysql2';
 require('dotenv').config();
 const env = process.env;
 
