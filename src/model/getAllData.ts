@@ -1,4 +1,4 @@
-import { getConnection } from './func/connection';
+import { getConnection } from '../func/connection';
 
 require('dotenv').config();
 const env = process.env;
@@ -9,9 +9,9 @@ let query = `SELECT TABLE_CATALOG, TABLE_SCHEMA, TABLE_NAME, COLUMN_NAME , COLUM
 
 const execQuery = async () => {
   try {
-    (await connection).query(query, (err, rows) => {
+    (await connection).execute(query, (err, rows) => {
       if (err) throw err;
-      console.log('test_userテーブル: ', rows);
+      console.log('全テーブルとカラム', rows);
     });
     (await connection).end();
   } catch (e) {
