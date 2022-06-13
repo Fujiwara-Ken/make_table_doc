@@ -16,8 +16,6 @@ const execQuery = async () => {
     (await connection).end();
   } catch (e) {
     console.log(e);
-  } finally {
-    console.log('終了');
   }
 };
 

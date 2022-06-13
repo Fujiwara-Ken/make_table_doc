@@ -12,7 +12,7 @@ const execQuery = async () => {
       if (err) throw err;
       console.log('テーブル一覧', rows);
     });
-    
+
     (await connection).end();
   } catch (e) {
     console.log(e);
