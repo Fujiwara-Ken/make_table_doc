@@ -23,4 +23,4 @@ SELECT
 FROM 
 	information_schema.columns 
 WHERE 
-	table_schema='sawallet_api_copy'
+	table_schema='db_name'

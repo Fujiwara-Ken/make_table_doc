@@ -2,8 +2,8 @@
 show tables from table_name;
 
 -- information_schemaから全テーブルを取得
-select * from information_schema.tables
-where table_schema = 'table_name'
+SELECT * FROM information_schema.tables
+WHERE table_schema = 'table_name'
 
 -- 指定したDBのテーブル情報全てを取得
 SELECT 
