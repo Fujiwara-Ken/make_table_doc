@@ -1,5 +1,5 @@
 //////////////////////////////////////////////
-// $ npx ts-node model/getAllData.ts
+// $ npx ts-node src/model/getAllData.ts
 //////////////////////////////////////////////
 
 import { getConnection } from '../func/connection';
