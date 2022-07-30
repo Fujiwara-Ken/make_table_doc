@@ -1,0 +1,14 @@
+[
+  { "table_name": "admins" },
+  { "table_name": "answer_choice" },
+  { "table_name": "campaign" },
+  { "table_name": "campaign_image" },
+  { "table_name": "migrations" },
+  { "table_name": "questionnaire" },
+  { "table_name": "questionnaire_answers" },
+  { "table_name": "secret_question_master" },
+  { "table_name": "secret_questions" },
+  { "table_name": "sent_history" },
+  { "table_name": "user" },
+  { "table_name": "user_campaign" }
+]

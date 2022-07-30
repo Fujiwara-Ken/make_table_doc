@@ -1,6 +1,10 @@
+//////////////////////////////////////////////
+// $ npx ts-node src/model/getTableList.ts
+//////////////////////////////////////////////
+
 import { getConnection } from '../func/connection';
 
-require('dotenv').config();
+require('dotenv').config({ debug: true });
 const env = process.env;
 const connection = getConnection();
 
