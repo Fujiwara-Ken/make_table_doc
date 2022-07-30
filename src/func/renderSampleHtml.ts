@@ -3,19 +3,36 @@
 //////////////////////////////////////////////
 
 import ejs from 'ejs';
+import path from 'path';
 import fs from 'fs';
 
-const render = async () => {
-  const data = { title: 'ページタイトル', content: 'テスト', foot: 'フッター' };
-  await ejs.renderFile('../template/table_def.ejs', data, function (err, html) {
-    const filePath = '../../out/table_list.html';
-    console.log(html);
+const templatePath = './src/template/table_def.ejs';
+const dataPath = './src/data/data-sample.json';
+const outputPath = './out/';
 
-    fs.writeFile(filePath, html, 'utf8', (err: any) => {
-      if (err) {
-        console.log(err);
+const data = JSON.parse(fs.readFileSync(dataPath, 'utf-8'));
+
+console.log(data);
+
+const render = async () => {
+  // const data = { title: 'ページタイトル', content: 'テスト', foot: 'フッター' };
+  // await ejs.renderFile(templatePath, data, function (err, html) {
+  //   console.log(html);
+
+  //   fs.writeFile(outputPath, html, 'utf8', (err: any) => {
+  //     if (err) {
+  //       console.log(err);
+  //     } else {
+  //       console.log('保存完了');
+  //     }
+  //   });
+  // });
+  data.forEach((item: ejs.Data) => {
+    ejs.renderFile(templatePath, item, (error, output) => {
+      if (error) {
+        console.log(error);
       } else {
-        console.log('保存完了');
+        fs.writeFileSync(path.join(outputPath, `${item.filename}.html`), output);
       }
     });
   });
