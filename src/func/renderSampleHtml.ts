@@ -32,7 +32,7 @@ const render = async () => {
       if (error) {
         console.log(error);
       } else {
-        fs.writeFileSync(path.join(outputPath, `${item.filename}.html`), output);
+        fs.writeFileSync(path.join(outputPath, `tabe_def.html`), output);
       }
     });
   });
