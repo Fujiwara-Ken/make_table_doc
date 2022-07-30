@@ -1,6 +1,7 @@
 //////////////////////////////////////////////
 // $ npx ts-node model/getAllData.ts
 //////////////////////////////////////////////
+
 import { getConnection } from '../func/connection';
 
 require('dotenv').config();
