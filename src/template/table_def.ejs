@@ -3,14 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%= title %></title>
+    <title>テーブル定義書</title>
   </head>
   <body>
     <div id="container">
-      <p><%= content %></p>
+      <table>
+        <% for(var i=0; i < data.length; i++) { %>
+        <tr>
+          <td><%= data[i].table_name %></td>
+        </tr>
+        <% } %>
+      </table>
     </div>
-    <footer>
-      <small><%= foot %></small>
-    </footer>
   </body>
 </html>
