@@ -19,7 +19,7 @@ const render = async () => {
     if (error) {
       console.log(error);
     } else {
-      fs.writeFileSync(path.join(outputPath, `tabe_def.html`), output);
+      fs.writeFileSync(path.join(outputPath, `table_def.html`), output);
     }
   });
 };
