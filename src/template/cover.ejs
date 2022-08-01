@@ -7,13 +7,20 @@
   </head>
   <body>
     <div id="container">
-      <h1>テーブル一覧</h1>
+      <h1>xxxシステム テーブル定義書</h1>
       <table border="1">
-        <% for(let i = 0; i < data.length; i++) { %>
         <tr>
-          <td><%= data[i].table_name %></td>
+          <th>システム名</th>
+          <th>作成者</th>
+          <th>作成日</th>
+          <th>RDBMS</th>
         </tr>
-        <% } %>
+        <tr>
+          <td>xxxシステム</td>
+          <td>山田</td>
+          <td>2022/8/1</td>
+          <td>MySQL</td>
+        </tr>
       </table>
     </div>
   </body>
